@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboarding_nav_graph"
+    app:startDestination="@id/loanDetailsFragment">
+
+    <fragment
+        android:id="@+id/loanDetailsFragment"
+        android:name="com.example.duestake.ui.fragments.onboarding.LoanDetailsFragment"
+        android:label="fragment_loan_details"
+        tools:layout="@layout/fragment_loan_details" >
+        <action
+            android:id="@+id/action_loanDetailsFragment_to_personalDetailsFragment"
+            app:destination="@id/personalDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalDetailsFragment"
+        android:name="com.example.duestake.ui.fragments.onboarding.PersonalDetailsFragment"
+        android:label="fragment_personal_details"
+        tools:layout="@layout/fragment_personal_details" >
+        <action
+            android:id="@+id/action_personalDetailsFragment_to_addressVerificationFragment"
+            app:destination="@id/addressVerificationFragment" />
+        <action
+            android:id="@+id/action_personalDetailsFragment_to_loanDetailsFragment"
+            app:destination="@id/loanDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressVerificationFragment"
+        android:name="com.example.duestake.ui.fragments.onboarding.AddressVerificationFragment"
+        android:label="fragment_address_verfication"
+        tools:layout="@layout/fragment_address_verfication" >
+        <action
+            android:id="@+id/action_addressVerificationFragment_to_KYCDetailsFragment"
+            app:destination="@id/KYCDetailsFragment" />
+        <action
+            android:id="@+id/action_addressVerificationFragment_to_personalDetailsFragment"
+            app:destination="@id/personalDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/KYCDetailsFragment"
+        android:name="com.example.duestake.ui.fragments.onboarding.KYCDetailsFragment"
+        android:label="fragment_kyc_details"
+        tools:layout="@layout/fragment_kyc_details" >
+        <action
+            android:id="@+id/action_KYCDetailsFragment_to_employmentDetailsFragment"
+            app:destination="@id/employmentDetailsFragment" />
+        <action
+            android:id="@+id/action_KYCDetailsFragment_to_addressVerificationFragment"
+            app:destination="@id/addressVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employmentDetailsFragment"
+        android:name="com.example.duestake.ui.fragments.onboarding.EmploymentDetailsFragment"
+        android:label="fragment_employment_details"
+        tools:layout="@layout/fragment_employment_details" >
+        <action
+            android:id="@+id/action_employmentDetailsFragment_to_creditCardFragment"
+            app:destination="@id/creditCardFragment" />
+        <action
+            android:id="@+id/action_employmentDetailsFragment_to_KYCDetailsFragment"
+            app:destination="@id/KYCDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditCardFragment"
+        android:name="com.example.duestake.ui.fragments.onboarding.CreditCardFragment"
+        android:label="fragment_credit_card"
+        tools:layout="@layout/fragment_credit_card" />
+</navigation>
